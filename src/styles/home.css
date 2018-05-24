@@ -1,0 +1,69 @@
+.home-page{
+    background-color: #2f4050;
+}
+
+.nav-left{
+    float: left;
+    width: 220px;
+}
+.right-div{
+    background-color: #f3f3f4;
+    margin: 0 0 0 220px;
+    display: block;
+    position: relative;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e7eaec !important;
+}
+.row {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.logoTit {
+    font-size: 3.2em;
+    color: #e6e6e6;
+    font-weight: bold;
+    padding-left: 0.2em;
+}
+.logoSim {
+    color: #b5b5b6;
+    padding-left: 0.2em;
+}
+
+.navbar-right{
+    margin-right: 64px;
+    float: right;
+    color: #888888;
+    line-height: 48px;
+    height: 48px;
+}
+
+.m-r-sm{
+    margin-right: 10px;
+}
+
+.white-bg {
+    background: #fff;
+}
+.page-heading {
+    margin-top: -14px;
+    border-top: 0;
+    height: 40px;
+}
+.breadcrumb{
+    padding-left: 32px;
+    height: 40px;
+    line-height: 40px;
+}
+.content{
+    min-height: 800px;
+}
+
+
+
+.navbar-default .landing_link a, .navbar-default .nav > li.landing_link > a:focus {
+    background: #1c91c0;
+    color: white;
+}
