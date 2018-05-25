@@ -7,7 +7,7 @@ class MenuUl extends React.Component {
     }
 
     render() {
-        const {  className,menuList,activeItem,openItems,handleItemClick } = this.props;
+        const { tier, className,menuList,activeItem,openItems,handleItemClick } = this.props;
 
         return (
 
@@ -17,11 +17,11 @@ class MenuUl extends React.Component {
                     menuList && menuList.map(item => {
                         return (
                             <div>
-                                <Item item={item} openItems={openItems} activeItem={activeItem} handleItemClick={handleItemClick}>
+                                <Item tier={tier} item={item} openItems={openItems} activeItem={activeItem} handleItemClick={handleItemClick}>
                                 </Item>
                                 {
                                     item.submenu && item.submenu.length > 0 && (
-                                        <MenuUl className={`sub-menu ${openItems && openItems.indexOf(item) != -1 ? 'in' : ''}`} 
+                                        <MenuUl tier={tier+1} className={`sub-menu ${openItems && openItems.indexOf(item) != -1 ? 'in' : ''}`} 
                                             menuList={item.submenu} 
                                             openItems={openItems} 
                                             activeItem={activeItem}

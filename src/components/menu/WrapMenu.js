@@ -10,7 +10,7 @@ class WrapMenu extends React.Component {
     render() {
         const { menu:{menuList},openItemList,nowItem, match,handleItemClick } = this.props;
         return (
-            <MenuUl className="nav-left wrap-menu" openItems={openItemList} activeItem={nowItem} menuList={menuList} match={match} handleItemClick={handleItemClick}/>
+            <MenuUl className="nav-left wrap-menu" tier={1} openItems={openItemList} activeItem={nowItem} menuList={menuList} match={match} handleItemClick={handleItemClick}/>
         );
     }
 }
