@@ -8,19 +8,48 @@ import { bindActionCreators } from 'redux';
 
 import { Route, Switch } from 'react-router-dom';
 
-import AddPage from './emp/Add';
+import UserListPage from './user/List';
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
+        this.userId = 0;
     }
     componentWillMount() {
         var shelf = this;
         get('/testMenu')
             .then((res) => {
+                this.initUsers(res);
                 shelf.props.setMenu(res);
             });
     }
+
+    createUserList(){
+        let userList = [];
+        for(let i=0;i<20;i++){
+            let user = {
+                id : this.userId ++,
+                name : 'name' + Math.random().toString().slice(2,6)
+            };
+            userList.push(user);
+        }
+        return userList;
+    }
+
+    initUsers(departmentList){
+        if(!departmentList) {
+            return;
+        }
+        for(let i=0;i<departmentList.length ;i++){
+            departmentList[i].userList = this.createUserList();
+            console.log(departmentList[i]);
+            if(departmentList[i].submenu){
+                this.initUsers(departmentList[i].submenu);
+            }
+        }
+    }
+
+    
 
     render() {
         const { menu: { activeItem }, match } = this.props;
@@ -38,8 +67,7 @@ class Home extends React.Component {
                     </div>
                     <div className="row content">
                         <Switch>
-                            {/* <Route exact path={props.match.path} component={BrowseUsersPage} /> */}
-                            <Route path={`${match.path}/emp/add`} component={AddPage} />
+                            <Route path={`/userList`} component={UserListPage} />
                         </Switch>
                     </div>
                 </div>

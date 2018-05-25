@@ -20,7 +20,7 @@ function menuProvider(menuData) {
                 const { openItems, activeItem } = this.state;
                 if (item.submenu && item.submenu.length > 0) {
                     let navNode = this.getParentNav(e.target);
-                    if (openItems.indexOf(item) == -1) {
+                    if (openItems.indexOf(item) === -1) {
                         this.toggleDisplay(navNode, true);
                         openItems.push(item);
                     } else {
@@ -36,11 +36,12 @@ function menuProvider(menuData) {
                         activeItem: item
                     });
                     this.props.setActiveItem(item);
+                    this.props.setUserList(item.userList||new Array());
                 }
             }
 
             getParentNav(navNode) {
-                if (navNode && navNode.className == 'wrap-menu') {
+                if (navNode && navNode.className === 'wrap-menu') {
                     return null;
                 }
                 while (navNode && navNode.tagName != "DIV") {

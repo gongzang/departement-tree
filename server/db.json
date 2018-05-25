@@ -2,22 +2,22 @@
     "testMenu": [
         {
             "name": "行政部门",
-            "userList":"[]"
+            "userList":[]
         },
         {
             "name": "东区",
             "submenu": [
                 {
                     "name": "部门A",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "部门B",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "部门C",
-                    "userList":"[]"
+                    "userList":[]
                 }
             ]
         },
@@ -26,62 +26,62 @@
             "submenu": [
                 {
                     "name": "广州",
-                    "userList":"[]",
+                    "userList":[],
                     "submenu": [
                         {
                             "name": "广州",
-                            "userList":"[]"
+                            "userList":[]
                         },
                         {
                             "name": "福建",
-                            "userList":"[]"
+                            "userList":[]
                         },
                         {
                             "name": "广西",
-                            "userList":"[]"
+                            "userList":[]
                         },
                         {
                             "name": "浙江",
-                            "userList":"[]"
+                            "userList":[]
                         },
                         {
                             "name": "江苏",
-                            "userList":"[]"
+                            "userList":[]
                         }
                     ]
                 },
                 {
                     "name": "福建",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "广西",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "浙江",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "江苏",
-                    "userList":"[]"
+                    "userList":[]
                 }
             ]
         },
         {
             "name": "特勤部",
-            "userList":"[]"
+            "userList":[]
         },
         {
             "name": "西区",
             "submenu": [
                 {
                     "name": "陕西",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "新疆",
-                    "userList":"[]"
+                    "userList":[]
                 }
             ]
         },
@@ -90,19 +90,19 @@
             "submenu": [
                 {
                     "name": "黑龙江",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "辽宁",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "河北",
-                    "userList":"[]"
+                    "userList":[]
                 },
                 {
                     "name": "山西",
-                    "userList":"[]"
+                    "userList":[]
                 }
             ]
         }

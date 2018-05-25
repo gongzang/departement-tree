@@ -18,8 +18,8 @@ class App extends Component {
       <Router props={this.props}>
         <div>
           <Switch>
-            <Route path="/app" component={HomePage} />
             <Route exact path="/login" component={LoginPage} />
+            <Route path="/" component={HomePage} />
           </Switch>
         </div>
       </Router>

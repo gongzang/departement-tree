@@ -4,11 +4,11 @@
 
 .nav-left{
     float: left;
-    width: 220px;
+    width: 30%;
 }
 .right-div{
     background-color: #f3f3f4;
-    margin: 0 0 0 220px;
+    margin: 0 0 0 30%;
     display: block;
     position: relative;
 }
@@ -58,7 +58,7 @@
     line-height: 40px;
 }
 .content{
-    min-height: 800px;
+    min-height: 1024px;
 }
 
 

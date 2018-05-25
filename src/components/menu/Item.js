@@ -8,7 +8,7 @@ class Item extends React.Component {
     render() {
         const {tier, item, openItems,activeItem,handleItemClick } = this.props;
         return (
-            <NavLink style={{'padding-left':tier*14+'px'}} className={`${item === activeItem ? 'landing_link' : ''} ${openItems && openItems.indexOf(item) != -1 ? 'open' : ''}`} to={ (item.id ? '/app/departmentUsers/'+item.id : '/app/') }  onClick={(e)=>handleItemClick(e,item)}>
+            <NavLink style={{'paddingLeft':tier*14+'px'}} className={`${item === activeItem ? 'landing_link' : ''} ${openItems && openItems.indexOf(item) != -1 ? 'open' : ''}`} to='userList'  onClick={(e)=>handleItemClick(e,item)}>
                 {item.name}
                 {
                     item.submenu && item.submenu.length > 0 && (
