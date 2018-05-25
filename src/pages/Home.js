@@ -14,14 +14,125 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.userId = 0;
+            this.testMenu = [
+                {
+                    "name": "行政部门",
+                    "userList":[]
+                },
+                {
+                    "name": "东区",
+                    "submenu": [
+                        {
+                            "name": "部门A",
+                            "userList":[]
+                        },
+                        {
+                            "name": "部门B",
+                            "userList":[]
+                        },
+                        {
+                            "name": "部门C",
+                            "userList":[]
+                        }
+                    ]
+                },
+                {
+                    "name": "南区",
+                    "submenu": [
+                        {
+                            "name": "广州",
+                            "userList":[],
+                            "submenu": [
+                                {
+                                    "name": "广州",
+                                    "userList":[]
+                                },
+                                {
+                                    "name": "福建",
+                                    "userList":[]
+                                },
+                                {
+                                    "name": "广西",
+                                    "userList":[]
+                                },
+                                {
+                                    "name": "浙江",
+                                    "userList":[]
+                                },
+                                {
+                                    "name": "江苏",
+                                    "userList":[]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "福建",
+                            "userList":[]
+                        },
+                        {
+                            "name": "广西",
+                            "userList":[]
+                        },
+                        {
+                            "name": "浙江",
+                            "userList":[]
+                        },
+                        {
+                            "name": "江苏",
+                            "userList":[]
+                        }
+                    ]
+                },
+                {
+                    "name": "特勤部",
+                    "userList":[]
+                },
+                {
+                    "name": "西区",
+                    "submenu": [
+                        {
+                            "name": "陕西",
+                            "userList":[]
+                        },
+                        {
+                            "name": "新疆",
+                            "userList":[]
+                        }
+                    ]
+                },
+                {
+                    "name": "北区",
+                    "submenu": [
+                        {
+                            "name": "黑龙江",
+                            "userList":[]
+                        },
+                        {
+                            "name": "辽宁",
+                            "userList":[]
+                        },
+                        {
+                            "name": "河北",
+                            "userList":[]
+                        },
+                        {
+                            "name": "山西",
+                            "userList":[]
+                        }
+                    ]
+                }
+            ]
     }
     componentWillMount() {
         var shelf = this;
-        get('/testMenu')
-            .then((res) => {
-                this.initUsers(res);
+        // get('/testMenu')
+        //     .then((res) => {
+        //         this.initUsers(res);
+        //         shelf.props.setMenu(res);
+        //     });
+        let res = this.testMenu;
+        this.initUsers(res);
                 shelf.props.setMenu(res);
-            });
     }
 
     createUserList(){
@@ -42,7 +153,6 @@ class Home extends React.Component {
         }
         for(let i=0;i<departmentList.length ;i++){
             departmentList[i].userList = this.createUserList();
-            console.log(departmentList[i]);
             if(departmentList[i].submenu){
                 this.initUsers(departmentList[i].submenu);
             }
@@ -52,7 +162,7 @@ class Home extends React.Component {
     
 
     render() {
-        const { menu: { activeItem }, match } = this.props;
+        const { menu: { activeItem } } = this.props;
         return (
             <div className='home-page'>
                 <WrapMenu {...this.props}>

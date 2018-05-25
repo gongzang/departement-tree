@@ -4,7 +4,7 @@ class Content extends Component {
     render() {
         const { user: { userList, filterName } } = this.props;
         return (
-            <table>
+            <table className="dataintable">
                 <thead>
                     <tr>
                         <th>用户ID</th>
@@ -14,7 +14,7 @@ class Content extends Component {
                 <tbody>
                     {
                         userList.map((user) => {
-                            return (!filterName || user.name.indexOf(filterName) != -1) && (
+                            return (!filterName || user.name.indexOf(filterName) !== -1) && (
                                 <tr key={user.id}>
                                     <td>{user.id}</td>
                                     <td>{user.name}</td>

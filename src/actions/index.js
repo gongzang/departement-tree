@@ -25,8 +25,8 @@ export function setUserList(userList) {
     };
 }
 
-export function filterItem(e) {
-    let filterItem = e.target.value
+export function filterItem(value) {
+    let filterItem = value;
 
     return {
         type: FILTER_ITEM,

@@ -4,9 +4,6 @@ import MenuUl from './MenuUl';
 import menuProvider from './utils/menuProvider';
 
 class WrapMenu extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         const { menu:{menuList},openItemList,nowItem, match,handleItemClick } = this.props;
         return (

@@ -31,12 +31,12 @@ function menuProvider(menuData) {
                         openItems: openItems.slice()
                     });
                 }
-                if (item != activeItem) {
+                if (item !== activeItem) {
                     this.setState({
                         activeItem: item
                     });
                     this.props.setActiveItem(item);
-                    this.props.setUserList(item.userList||new Array());
+                    this.props.setUserList(item.userList||[]);
                 }
             }
 
@@ -44,14 +44,14 @@ function menuProvider(menuData) {
                 if (navNode && navNode.className === 'wrap-menu') {
                     return null;
                 }
-                while (navNode && navNode.tagName != "DIV") {
-                    if (navNode.className.indexOf('wrap-menu') != -1) {
+                while (navNode && navNode.tagName !== "DIV") {
+                    if (navNode.className.indexOf('wrap-menu') !== -1) {
                         return null;
                     }
                     navNode = navNode.parentNode;
 
                 }
-                if (navNode && navNode.children.length == 2) {
+                if (navNode && navNode.children.length === 2) {
                     navNode = navNode.children[1];
                     return navNode;
                 }

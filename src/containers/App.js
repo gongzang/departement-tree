@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route,  Switch } from 'react-router-dom';
 import './App.css';
-import PropTypes from 'prop-types';
 import HomePage from '../pages/Home';
-import LoginPage from '../pages/Login';
 import * as ItemsActions from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    const actions = this.props.actions;
     return (
       <Router props={this.props}>
         <div>
           <Switch>
-            <Route exact path="/login" component={LoginPage} />
             <Route path="/" component={HomePage} />
           </Switch>
         </div>
