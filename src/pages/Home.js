@@ -162,7 +162,7 @@ class Home extends React.Component {
     
 
     render() {
-        const { menu: { activeItem } } = this.props;
+        const { menu: { activeItem },match } = this.props;
         return (
             <div className='home-page'>
                 <WrapMenu {...this.props}>
@@ -176,9 +176,13 @@ class Home extends React.Component {
                         <p className="breadcrumb" id="breadcrumb">{activeItem.name}</p>
                     </div>
                     <div className="row content">
+                    <Route render={({ location }) => {
+                  return(
                         <Switch>
-                            <Route path={`/userList`} component={UserListPage} />
-                        </Switch>
+                            {console.log(this.props)}
+                        <Route location={location} path={`/userList`} component={UserListPage} />
+                    </Switch>
+                  )}}/>
                     </div>
                 </div>
             </div>

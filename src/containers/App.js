@@ -10,11 +10,14 @@ class App extends Component {
   render() {
     return (
       <Router props={this.props}>
+      <Route render={({ location }) => {
+        return(
         <div>
           <Switch>
-            <Route path="/" component={HomePage} />
+            <Route location={location} path="/" component={HomePage} />
           </Switch>
         </div>
+        )}}/>
       </Router>
     );
   }
