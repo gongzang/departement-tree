@@ -1,7 +1,10 @@
 import React from 'react'
 
 class SearchBar extends React.Component {
-    timer = 0;
+    constructor(props){
+        super(props)
+        this.timer = 0;
+    }
     handleKeyUp(value) {
 
         if (this.timer) {
