@@ -18,10 +18,10 @@ export function setOpenItem(openItem) {
         openItem
     };
 }
-export function setUserList(userList) {
+export function setUserList(user) {
     return {
         type: SET_USER_LIST,
-        userList
+        user
     };
 }
 

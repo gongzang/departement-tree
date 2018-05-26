@@ -17,9 +17,9 @@ class MenuUl extends React.Component {
                                 <Item tier={tier} item={item} openItems={openItems} activeItem={activeItem} handleItemClick={handleItemClick}>
                                 </Item>
                                 {
-                                    item.submenu && item.submenu.length > 0 && (
+                                    item.group && item.group.length > 0 && (
                                         <MenuUl tier={tier+1} className={`sub-menu ${openItems && openItems.indexOf(item) !== -1 ? 'in' : ''}`} 
-                                            menuList={item.submenu} 
+                                            menuList={item.group} 
                                             openItems={openItems} 
                                             activeItem={activeItem}
                                             handleItemClick={handleItemClick}

@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
         super(props)
         this.timer = 0;
     }
-    handleKeyUp(value) {
+    handleChange(value) {
 
         if (this.timer) {
             clearTimeout(this.timer);
@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="pure-form">
-                <input type="text" onKeyUp={e => this.handleKeyUp(e.target.value)} placeholder="请输入查找的员工" />
+                <input type="text" onChange={e => this.handleChange(e.target.value)} placeholder="请输入过滤的的员工" />
             </div>
         )
     }

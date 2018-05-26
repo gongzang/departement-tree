@@ -18,7 +18,7 @@ function menuProvider(menuData) {
 
             handleItemClick(e, item) {
                 const { openItems, activeItem } = this.state;
-                if (item.submenu && item.submenu.length > 0) {
+                if (item.group && item.group.length > 0) {
                     let navNode = this.getParentNav(e.target);
                     if (openItems.indexOf(item) === -1) {
                         this.toggleDisplay(navNode, true);
@@ -36,7 +36,7 @@ function menuProvider(menuData) {
                         activeItem: item
                     });
                     this.props.setActiveItem(item);
-                    this.props.setUserList(item.userList||[]);
+                    this.props.setUserList(item.user||[]);
                 }
             }
 

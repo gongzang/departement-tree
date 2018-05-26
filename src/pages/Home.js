@@ -14,114 +14,134 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.userId = 0;
-            this.testMenu = [
-                {
-                    "name": "行政部门",
-                    "userList":[]
-                },
-                {
-                    "name": "东区",
-                    "submenu": [
-                        {
-                            "name": "部门A",
-                            "userList":[]
-                        },
-                        {
-                            "name": "部门B",
-                            "userList":[]
-                        },
-                        {
-                            "name": "部门C",
-                            "userList":[]
-                        }
-                    ]
-                },
-                {
-                    "name": "南区",
-                    "submenu": [
-                        {
-                            "name": "广州",
-                            "userList":[],
-                            "submenu": [
-                                {
-                                    "name": "广州",
-                                    "userList":[]
-                                },
-                                {
-                                    "name": "福建",
-                                    "userList":[]
-                                },
-                                {
-                                    "name": "广西",
-                                    "userList":[]
-                                },
-                                {
-                                    "name": "浙江",
-                                    "userList":[]
-                                },
-                                {
-                                    "name": "江苏",
-                                    "userList":[]
-                                }
-                            ]
-                        },
-                        {
-                            "name": "福建",
-                            "userList":[]
-                        },
-                        {
-                            "name": "广西",
-                            "userList":[]
-                        },
-                        {
-                            "name": "浙江",
-                            "userList":[]
-                        },
-                        {
-                            "name": "江苏",
-                            "userList":[]
-                        }
-                    ]
-                },
-                {
-                    "name": "特勤部",
-                    "userList":[]
-                },
-                {
-                    "name": "西区",
-                    "submenu": [
-                        {
-                            "name": "陕西",
-                            "userList":[]
-                        },
-                        {
-                            "name": "新疆",
-                            "userList":[]
-                        }
-                    ]
-                },
-                {
-                    "name": "北区",
-                    "submenu": [
-                        {
-                            "name": "黑龙江",
-                            "userList":[]
-                        },
-                        {
-                            "name": "辽宁",
-                            "userList":[]
-                        },
-                        {
-                            "name": "河北",
-                            "userList":[]
-                        },
-                        {
-                            "name": "山西",
-                            "userList":[]
-                        }
-                    ]
-                }
-            ]
+        this.testMenu = [
+            {
+                name: "总部门",
+
+                user: [{
+
+                    name: "Prometheus",
+
+                    sex: "male"
+
+                }, {
+
+                    name: "Athena",
+
+                    sex: "female"
+
+                }],
+
+                group: [
+                    {
+                        "name": "行政部门",
+                        "user": []
+                    },
+                    {
+                        "name": "东区",
+                        "group": [
+                            {
+                                "name": "部门A",
+                                "user": []
+                            },
+                            {
+                                "name": "部门B",
+                                "user": []
+                            },
+                            {
+                                "name": "部门C",
+                                "user": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "南区",
+                        "group": [
+                            {
+                                "name": "广州",
+                                "user": [],
+                                "group": [
+                                    {
+                                        "name": "广州",
+                                        "user": []
+                                    },
+                                    {
+                                        "name": "福建",
+                                        "user": []
+                                    },
+                                    {
+                                        "name": "广西",
+                                        "user": []
+                                    },
+                                    {
+                                        "name": "浙江",
+                                        "user": []
+                                    },
+                                    {
+                                        "name": "江苏",
+                                        "user": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "福建",
+                                "user": []
+                            },
+                            {
+                                "name": "广西",
+                                "user": []
+                            },
+                            {
+                                "name": "浙江",
+                                "user": []
+                            },
+                            {
+                                "name": "江苏",
+                                "user": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "特勤部",
+                        "user": []
+                    },
+                    {
+                        "name": "西区",
+                        "group": [
+                            {
+                                "name": "陕西",
+                                "user": []
+                            },
+                            {
+                                "name": "新疆",
+                                "user": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "北区",
+                        "group": [
+                            {
+                                "name": "黑龙江",
+                                "user": []
+                            },
+                            {
+                                "name": "辽宁",
+                                "user": []
+                            },
+                            {
+                                "name": "河北",
+                                "user": []
+                            },
+                            {
+                                "name": "山西",
+                                "user": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
     componentWillMount() {
         var shelf = this;
@@ -132,37 +152,37 @@ class Home extends React.Component {
         //     });
         let res = this.testMenu;
         this.initUsers(res);
-                shelf.props.setMenu(res);
+        shelf.props.setMenu(res);
     }
 
-    createUserList(){
+    createUserList() {
         let userList = [];
-        for(let i=0;i<20;i++){
+        for (let i = 0; i < 20; i++) {
             let user = {
-                id : this.userId ++,
-                name : 'name' + Math.random().toString().slice(2,6)
+                id: this.userId++,
+                name: 'name' + Math.random().toString().slice(2, 6)
             };
             userList.push(user);
         }
         return userList;
     }
 
-    initUsers(departmentList){
-        if(!departmentList) {
+    initUsers(departmentList) {
+        if (!departmentList) {
             return;
         }
-        for(let i=0;i<departmentList.length ;i++){
-            departmentList[i].userList = this.createUserList();
-            if(departmentList[i].submenu){
-                this.initUsers(departmentList[i].submenu);
+        for (let i = 0; i < departmentList.length; i++) {
+            departmentList[i].user = this.createUserList();
+            if (departmentList[i].group) {
+                this.initUsers(departmentList[i].group);
             }
         }
     }
 
-    
+
 
     render() {
-        const { menu: { activeItem },match } = this.props;
+        const { menu: { activeItem }, match } = this.props;
         return (
             <div className='home-page'>
                 <WrapMenu {...this.props}>
@@ -176,13 +196,14 @@ class Home extends React.Component {
                         <p className="breadcrumb" id="breadcrumb">{activeItem.name}</p>
                     </div>
                     <div className="row content">
-                    <Route render={({ location }) => {
-                  return(
-                        <Switch>
-                            {console.log(this.props)}
-                        <Route location={location} path={`/userList`} component={UserListPage} />
-                    </Switch>
-                  )}}/>
+                        <Route render={({ location }) => {
+                            return (
+                                <Switch>
+                                    {console.log(this.props)}
+                                    <Route location={location} path={`/user`} component={UserListPage} />
+                                </Switch>
+                            )
+                        }} />
                     </div>
                 </div>
             </div>

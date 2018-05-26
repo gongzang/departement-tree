@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Content extends Component {
     render() {
-        const { user: { userList, filterName } } = this.props;
+        const { user: { user, filterName } } = this.props;
         return (
             <table className="dataintable">
                 <thead>
@@ -13,8 +13,8 @@ class Content extends Component {
                 </thead>
                 <tbody>
                     {
-                        userList.map((user) => {
-                            return (!filterName || user.name.indexOf(filterName) !== -1) && (
+                        user.map((user) => {
+                            return (!filterName || user.name.indexOf(filterName) === -1) && (
                                 <tr key={user.id}>
                                     <td>{user.id}</td>
                                     <td>{user.name}</td>
